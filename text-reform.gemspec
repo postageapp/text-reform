@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = true
 
-  s.test_suite_file = 'tests/testall.rb'
+  s.test_files = 'tests/testall.rb'
 
   s.autorequire = %q{text/format}
   s.require_paths = %w{lib}
