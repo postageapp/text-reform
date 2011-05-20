@@ -1333,8 +1333,11 @@ class Text::Reform
   def __header_or_footer(element, page, last)
     __debug("element: ", element)
     if element.respond_to?(:call)
-      if element.arity == 1
+      case (element.arity)
+      when 1
         __header_or_footer(element.call(page), page, last)
+      when 0
+        __header_or_footer(element.call, page, last)
       else
         __header_or_footer(element.call(page, last), page, last)
       end
